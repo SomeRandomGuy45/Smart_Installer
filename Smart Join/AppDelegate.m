@@ -77,13 +77,13 @@
         self.customInstallPath = @"/Applications/Roblox.app";
         FoundRobloxApp = YES;
     }
-    if ([self.main_helper doesFileExistAtPath:@"/tmp/Roblox.app"])
-    {
-        self.customInstallPath = @"/tmp/Roblox.app";
-        FoundRobloxApp = YES;
-    }
     if ([self.customInstallPath length] != 0 && [self.main_helper doesFileExistAtPath:self.customInstallPath])
     {
+        FoundRobloxApp = YES;
+    }
+    else
+    {
+        self.customInstallPath = @"/tmp/Roblox.app";
         FoundRobloxApp = YES;
     }
     NSString *url = @"https://games.roblox.com/v1/games/";
